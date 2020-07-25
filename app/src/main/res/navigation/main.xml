@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="abbos2101.namozoqishniorganish.ui.fragment.main.view.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_categoryFragment"
+            app:destination="@id/categoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="abbos2101.namozoqishniorganish.ui.fragment.category.view.CategoryFragment"
+        android:label="CategoryFragment"
+        tools:layout="@layout/fragment_category">
+        <action
+            android:id="@+id/action_categoryFragment_to_subCategoryFragment"
+            app:destination="@id/subCategoryFragment" />
+        <action
+            android:id="@+id/action_categoryFragment_to_contentFragment"
+            app:destination="@id/contentFragment" />
+        <argument
+            android:name="message"
+            android:defaultValue=''
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/subCategoryFragment"
+        android:name="abbos2101.namozoqishniorganish.ui.fragment.supcategory.view.SubCategoryFragment"
+        android:label="SubCategoryFragment"
+        tools:layout="@layout/fragment_sub_category">
+        <action
+            android:id="@+id/action_subCategoryFragment_to_contentFragment"
+            app:destination="@id/contentFragment" />
+        <argument
+            android:name="message"
+            android:defaultValue=''
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/contentFragment"
+        android:name="abbos2101.namozoqishniorganish.ui.fragment.content.ContentFragment"
+        android:label="ContentFragment"
+        tools:layout="@layout/fragment_content">
+        <argument
+            android:name="position"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <argument
+            android:name="message"
+            android:defaultValue=''
+            app:argType="string" />
+    </fragment>
+
+</navigation>
